@@ -67,7 +67,30 @@
 </html>
 
 <style>
+
+    :root {
+        --green: #8da47e;
+        --card: #e7cba9;
+        --nejknap: #f7ce76;
+        --lavendel: #9cadce;
+        --abrikos: #ffc09f;
+        --white: #fff;
+    }
+
     body {
         padding: 0px;
     }
+
+    .btn-primary {
+        background-color: var(--green);
+        color: var(--white);
+        border-color: var(--white);
+    }
+
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-default {
+            background-color: #9cadce;
+            color: var(--white);
+            border-color: var(--white);
+        }
 </style>
+
