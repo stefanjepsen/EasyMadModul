@@ -4,17 +4,17 @@
 
 <div class="container-fluid" id="indexContainer">
     <div class="row">
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <div class="card-header" style="display:flex; justify-content: space-between;">
-                    <h5>Prisoner</h5><h5>24601</h5>
-                </div>
-                <img src="~/Content/iu1eBbs.jpg" class="card-img-top" alt="...">
-                <h5 class="card-header">Madret</h5>
-                <div class="card-body" style="padding:0px;">
-                    <a href="#" class="btn btn-primary " style=" padding: 0px; height:54px; width: 100% ; display:flex; justify-content:center; align-items:center;"><i class="bi bi-check" style="font-size: 4em;"></i></a>
-                </div>
-            </div>
+        <div id="colwcard" class="col">
+           @* <div class="card" style="width: 18rem;">
+                    <div class="card-header" style="display:flex; justify-content: space-between;">
+                        <h5 id="name"></h5><h5 id="mnr"></h5>
+                    </div>
+                    <img class="card-img-top" alt="..." id="madImg">
+                    <h5 class="card-header" id="madRet"></h5>
+                    <div class="card-body" style="padding:0px;">
+                        <a href="#" class="btn btn-primary " style=" padding: 0px; height:54px; width: 100% ; display:flex; justify-content:center; align-items:center;"><i class="bi bi-check" style="font-size: 4em;"></i></a>
+                    </div>
+            </div>*@
         </div>
     </div>
 </div>
@@ -31,4 +31,113 @@
             margin-top: 5%;
         }
     }
+
+    .card {
+        width: 18rem;
+    }
+
 </style>
+
+<script>
+    let colwcard = document.getElementById("colwcard");
+   @* let cname = document.getElementById("name");
+    let cmnr = document.getElementById("mnr");
+    let cmadImg = document.getElementById("madImg");
+    let cmadRet = document.getElementById("madRet");*@
+
+    function Person(name, mnr, madImg, madRet) {
+        this.name = name;
+        this.mnr = mnr;
+        this.madImg = madImg;
+        this.madRet = madRet;
+    }
+
+    const person1 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person2 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person3 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person4 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person5 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person6 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person7 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person8 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person9 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person10 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person11 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person12 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person13 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person14 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person15 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person16 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person17 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person18 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person19 = new Person("John", 2222, undefined, "kartoffelmix");
+    const person20 = new Person("John", 2222, undefined, "kartoffelmix");
+
+    let orders = [person1, person2, person3, person4, person5, person6, person7, person8, person9, person10, person11, person12, person13, person14, person15, person16, person17, person18, person19, person20];
+    console.log(orders[0]);
+    console.log(orders.length);
+
+    renderCards(orders);
+
+    function renderCards(orders) {
+        colwcard.innerHTML = "";
+        for (let i = 0; i < orders.length; i++) {
+
+
+            let card = document.createElement("div");
+            card.className = "card";
+            card.style.width = "18rem";
+
+            let cardHeader = document.createElement("div");
+            cardHeader.className = "card-header";
+            cardHeader.style.cssText = "display:flex;justify-content:space-between;";
+
+            let name = document.createElement("h5");
+            name.innerHTML = orders[i].name;
+
+            let mnr = document.createElement("h5");
+            mnr.innerHTML = orders[i].mnr;
+
+            cardHeader.appendChild(name);
+            cardHeader.appendChild(mnr);
+            card.appendChild(cardHeader);
+
+            let madImg = document.createElement("img");
+            madImg.className = "card-img-top";
+            madImg.src = orders[i].madImg;
+            card.appendChild(madImg);
+
+            let madRet = document.createElement("h5");
+            madRet.className = "card-header";
+            madRet.innerHTML = orders[i].madRet;
+            card.appendChild(madRet);
+
+            let cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+            cardBody.style.padding = "0px";
+
+            let cardBtn = document.createElement("a");
+            cardBtn.className = "btn btn-primary";
+            cardBtn.style.cssText = "padding:0px;height:54px;width:100%;display:flex;justify-content:center;align-items:center;";
+
+            let checki = document.createElement("i");
+            checki.className = "bi bi-check";
+            checki.style.fontSize = "4em";
+
+            cardBtn.appendChild(checki);
+            cardBody.appendChild(cardBtn);
+            card.appendChild(cardBody);
+            colwcard.appendChild(card);
+
+            @*console.log(orders.name);
+            cards += orders[i];
+            cname.innerHTML = orders[i].name;
+            cmnr.innerHTML = orders[i].mnr;
+            cmadImg.src = orders[i].madImg;
+            cmadRet.innerHTML = orders.madRet;
+            cards += orders[i] ;*@
+     }
+    }
+
+     
+</script>
